@@ -1,0 +1,9 @@
+[submodule "scss/components/yamm3"]
+	path = scss/components/yamm3
+	url = https://github.com/geedmo/yamm3.git
+[submodule "scss/components/webhostinghub-glyphs"]
+	path = scss/components/webhostinghub-glyphs
+	url = https://github.com/gustavohenke/webhostinghub-glyphs.git
+[submodule "scss/components/open-sans-fontface"]
+	path = scss/components/open-sans-fontface
+	url = https://github.com/FontFaceKit/open-sans.git

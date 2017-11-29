@@ -1,0 +1,169 @@
+@media (max-width: 544px) {
+  .p-a-3 {
+    padding: 1rem !important;
+  }
+  .m-t-2 {
+    margin-top: .75rem !important;
+  }
+  .m-b-3 {
+    margin-bottom: 1rem !important;
+  }
+  .collapsing .navbar-nav .nav-item,
+  .in .navbar-nav .nav-item {
+    float: none;
+  }
+  .collapsing .navbar-nav .nav-item + .nav-item,
+  .in .navbar-nav .nav-item + .nav-item {
+    margin-left: 0;
+  }
+
+  .navbar-transparent.active {
+    background-color: #000;
+    background-color: rgba(0,0,0,.6);
+  }
+}
+
+.navbar-transparent {
+  text-shadow: 0 0 .4em black;
+  background-color: transparent;
+  -webkit-transition: background-color .3s;
+       -o-transition: background-color .3s;
+          transition: background-color .3s;
+}
+
+.navbar-transparent:hover {
+  background-color: #000;
+  background-color: rgba(0,0,0,.6);
+}
+
+.navbar-brand img {
+  min-width: 80px;
+  max-width: 20vw;
+}
+
+@media (max-width: 544px) {
+  .navbar-brand {
+    margin-right: 0;
+  }
+  .display-4 {
+    font-size: 1.5rem;
+  }
+}
+
+.app-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: -.05em;
+}
+
+@media (min-width: 544px) {
+  .navbar-brand img {
+    margin-right: 1rem;
+  }
+  .app-name {
+    font-size: 1.5rem;
+  }
+}
+
+.navbar-nav .nav-link {
+  padding: 1rem;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.text-inverse {
+  text-shadow: 0 0 .4em black;
+}
+
+.input-group-transparent {
+  margin-bottom: 1rem;
+  border-bottom: .3rem solid white;
+}
+
+.input-group-transparent > .form-control,
+.input-group-transparent > .input-group-addon,
+.input-group-transparent > .input-group-btn > .btn {
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  border: 0 none;
+}
+
+.input-group-transparent .form-control::-webkit-input-placeholder {
+  color: rgba(255,255,255,.4);
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.input-group-transparent .form-control::-moz-placeholder {
+  color: rgba(255,255,255,.4);
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.input-group-transparent .form-control:-ms-input-placeholder {
+  color: rgba(255,255,255,.4);
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.input-group-transparent .form-control::placeholder {
+  color: rgba(255,255,255,.4);
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 544px) {
+  .input-group-transparent > .form-control,
+  .input-group-transparent > .input-group-addon,
+  .input-group-transparent > .input-group-btn > .btn {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .input-group-transparent > .form-control,
+  .input-group-transparent > .input-group-addon,
+  .input-group-transparent > .input-group-btn > .btn {
+    font-size: 2.5rem;
+  }
+}
+
+.portraits img {
+  -webkit-transition: -webkit-transform .2s, -webkit-box-shadow .2s;
+       -o-transition:         transform .2s, box-shadow .2s, -o-transform .2s;
+          transition: -webkit-transform .2s, -webkit-box-shadow .2s;
+          transition:         transform .2s, box-shadow .2s;
+          transition:         transform .2s, box-shadow .2s, -webkit-transform .2s, -o-transform .2s, -webkit-box-shadow .2s;
+}
+.portraits a:nth-child(3n):hover img {
+  -webkit-box-shadow: 0 0 1rem black;
+          box-shadow: 0 0 1rem black;
+  -webkit-transform: scale(1.6) rotate(10deg);
+      -ms-transform: scale(1.6) rotate(10deg);
+       -o-transform: scale(1.6) rotate(10deg);
+          transform: scale(1.6) rotate(10deg);
+}
+.portraits a:nth-child(3n+1):hover img {
+  -webkit-box-shadow: 0 0 1rem black;
+          box-shadow: 0 0 1rem black;
+  -webkit-transform: scale(1.6) rotate(-12deg);
+      -ms-transform: scale(1.6) rotate(-12deg);
+       -o-transform: scale(1.6) rotate(-12deg);
+          transform: scale(1.6) rotate(-12deg);
+}
+.portraits a:nth-child(3n+2):hover img {
+  -webkit-box-shadow: 0 0 1rem black;
+          box-shadow: 0 0 1rem black;
+  -webkit-transform: scale(1.6) rotate(8deg);
+      -ms-transform: scale(1.6) rotate(8deg);
+       -o-transform: scale(1.6) rotate(8deg);
+          transform: scale(1.6) rotate(8deg);
+}

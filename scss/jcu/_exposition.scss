@@ -1,0 +1,21 @@
+//
+// Exposition: the background that sets the scene
+//
+.jcu-exposition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $jcu-zindex-exposition;
+  display: block;
+  width: 100%;
+  max-height: $jcu-exposition-max-height;
+  overflow: hidden;
+  background-color: $jcu-exposition-background;
+
+  img {
+    width: 100%;
+    height: auto;
+    opacity: .2;
+  }
+}
+

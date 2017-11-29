@@ -1,0 +1,11 @@
+//
+// Themes: the various JCU theme colours applied to a page.
+//
+@each $name, $gradient in $jcu-typography-themes {
+  .jcu-theme--#{$name} {
+    h1, .h1 { color: nth($gradient, 1); }
+    h2, .h2 { color: nth($gradient, 2); }
+    h3, h4, h5, h6,
+    .h3, .h4, .h5, .h6 { color: nth($gradient, 3); }
+  }
+}

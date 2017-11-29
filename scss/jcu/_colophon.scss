@@ -1,0 +1,8 @@
+//
+// Colophon: publication details for display at bottom of pages.
+//
+.jcu-colophon {
+  @extend .small;
+  padding-top: ($spacer / 2);
+  padding-bottom: ($spacer / 2);
+}

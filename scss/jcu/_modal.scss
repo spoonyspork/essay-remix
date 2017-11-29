@@ -1,0 +1,12 @@
+//
+// Modal: popup dialog boxes
+//
+.modal-header {
+  color: $jcu-modal-header-color;
+  background-color: $jcu-modal-header-bg;
+
+  .close {
+    color: $jcu-modal-header-color;
+    opacity: 1;
+  }
+}

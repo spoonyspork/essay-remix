@@ -1,0 +1,51 @@
+//
+// Dropdowns
+//
+.dropdown-menu {
+  // Override default Bootstrap display: none so we have transitions
+  display: block;
+  // Move the dropdown menu upwards to avoid rounding issues
+  margin-top: -$dropdown-border-width;
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: $jcu-fade-transition-speed;
+  transition-property: visibility, opacity;
+}
+
+// Hide dropdown menus within transitionining collapsibles
+// This prevents an incorrect scrollHeight on open
+.collapsing .dropdown-menu {
+  display: none;
+}
+
+.open {
+  > .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.dropdown-toggle::after {
+  width: auto;
+  height: auto;
+  margin-right: 0;
+  margin-left: .25rem;
+  padding-top: .2em;
+  font-family: $jcu-icon-font-family;
+  line-height: ($line-height / 2);
+  content: "\e39d";
+  border-top: 0 none;
+  border-right: 0 none;
+  border-left: 0 none;
+}
+
+// Open dropdown menus on hover by default rather than click
+.dropdown--open-on-hover {
+  @include hover-focus {
+    > .dropdown-menu {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0s, opacity $jcu-fade-transition-speed;
+    }
+  }
+}

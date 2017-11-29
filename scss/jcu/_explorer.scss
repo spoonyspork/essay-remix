@@ -1,0 +1,187 @@
+//
+// Explorer: the primary branding and navigation header, featuring the JCU logo
+//
+
+// Special offset and configuration for pages with both Toolbar and Explorer
+.body--has-toolbar.body--has-explorer {
+  $toolbar-explorer-offset: ($jcu-toolbar-height-sm + $jcu-explorer-height-sm);
+
+  @include media-breakpoint-down(sm) {
+    padding-top: $toolbar-explorer-offset;
+  }
+
+  @media print {
+    padding-top: 0;
+  }
+
+  .jcu-explorer__toggleable.in {
+    height: calc(100vh - #{$toolbar-explorer-offset});
+  }
+}
+
+// Solution to http://sevenspark.com/diagnosis/submenus-hidden-in-internet-explorer-with-filter-gradient
+@mixin jcu-explorer-gradient {
+  background-color: nth($jcu-gradient-blue, 1);
+  background-image: linear-gradient(to right, nth($jcu-gradient-blue, 1) 0%, nth($jcu-gradient-blue, 2) 175%);
+  background-repeat: repeat-x;
+}
+
+.navbar--jcu-explorer {
+  z-index: $jcu-zindex-explorer;
+  padding-top: ($navbar-padding-y / 2);
+  padding-bottom: ($navbar-padding-y / 2);
+  background-color: $brand-primary;
+
+  @include media-breakpoint-down(sm) {
+    position: fixed;
+    top: $jcu-toolbar-height-sm;
+    width: 100%;
+    padding: 0;
+    border-bottom: $border-width solid $brand-primary;
+
+    // Simulate navbar padding on smaller devices for a full-width navbar
+    .navbar-brand {
+      margin-left: $navbar-padding-x;
+    }
+
+    .navbar-toggler {
+      margin-right: $navbar-padding-x;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    @include jcu-explorer-gradient;
+
+    // Padding is 0 so that dropdowns are flush
+    padding-bottom: 0;
+    border: 0 none;
+    border-top-right-radius: 1.25rem;
+  }
+
+  .navbar-brand img {
+    height: 4rem;
+  }
+
+  // Larger device-centric display elements
+  .navbar-right {
+    // container-fluid padding-right is already half-gutter
+    margin-right: ($grid-gutter-width / 2);
+  }
+
+  .navbar-nav {
+    .nav-link {
+      padding: $spacer-y ($spacer-x * 1.5) ($spacer-y * 1.75);
+      margin-top: ($spacer-y * .75);
+      color: $jcu-explorer-color;
+      border-top-right-radius: 1.25em;
+
+      @include media-breakpoint-only(md) {
+        padding-right: ($spacer-x * 1.25);
+        padding-left: ($spacer-x * 1.25);
+      }
+    }
+
+    .nav-item + .nav-item {
+      margin-left: 0;
+    }
+  }
+
+  .nav-link:hover,
+  .nav-link:focus,
+  .dropdown:hover .nav-link {
+    color: $jcu-explorer-active-color;
+    background-color: $jcu-explorer-color;
+  }
+
+  .dropdown-menu {
+    padding-top: 0;
+    font-size: $font-size-sm;
+    color: $jcu-explorer-color;
+    border: 0 none;
+    transition-property: none;
+    @include jcu-explorer-gradient;
+  }
+
+  // Disable transitions for dropdowns
+  .dropdown--open-on-hover {
+    @include hover-focus {
+      > .dropdown-menu {
+        transition: none;
+      }
+    }
+  }
+
+  .yamm-content {
+    // Line up with nav gutter + navbar-padding
+    margin: 0 $navbar-padding-x ($navbar-padding-y / 2);
+    color: $jcu-explorer-content-color;
+    background-color: $jcu-explorer-color;
+  }
+
+  .jcu-overlay-card {
+    max-height: 8rem;
+    overflow: hidden;
+  }
+
+  @at-root .jcu-explorer__tagline {
+    text-align: center;
+    a {
+      font-weight: bold;
+      color: $jcu-explorer-color;
+    }
+  }
+
+  // Smaller device-centric display elements
+  .navbar-toggler {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: $jcu-icon-font-size-lg;
+    line-height: $line-height;
+    color: $jcu-explorer-color;
+  }
+
+  @at-root .jcu-explorer__toggleable {
+    clear: both;
+    font-size: 1.5rem;
+
+    &.in {
+      height: calc(100vh - #{$jcu-explorer-height-sm});
+      overflow-y: auto;
+    }
+
+    .nav-link {
+      color: $jcu-explorer-color;
+      @include hover-focus {
+        color: $jcu-explorer-active-color;
+      }
+    }
+
+    .nav-item {
+      margin-top: 0;
+      border-bottom: $border-width solid $jcu-explorer-color;
+
+      &:last-child {
+        border-bottom: 0 none;
+      }
+    }
+
+    // Nested navs
+    .nav .nav {
+      padding-left: $navbar-padding-x;
+      font-size: 1.2rem;
+      background-color: $gray-dark;
+
+      .nav-item {
+        margin-left: $navbar-padding-x;
+        border-bottom-color: $gray-light;
+      }
+
+      .nav-link {
+        padding-left: ($navbar-padding-x / 2);
+      }
+    }
+
+  }
+
+}
+

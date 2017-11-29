@@ -1,0 +1,87 @@
+//
+// Fixes: resolve SVG scaling issue on IE 9-10 and Edge
+//
+.img-fluid[src$=".svg"] { width: 100%\9;  }
+_:-ms-fullscreen, :root .img-fluid[src$=".svg"] { width: 100%;  }
+
+//
+// Opacity
+//
+.opaque {
+  opacity: 1;
+}
+
+.transparent {
+  opacity: 0;
+}
+
+//
+// Borders: utilities like Bootstrap's spacing (eg m-a-0)
+//
+.b-a-0 { border: 0 none !important; }
+
+//
+// Background: utilities for specifying backgrounds
+//
+// Colours were sourced from https://www.jcu.edu.sg/courses-and-study/courses
+// (September 2015)
+@mixin jcu-bg-variant($background-color) {
+  $color: #fff;
+  $text-shadow-color: $body-color;
+  @if lightness($background-color) > 70% {
+    $color: #000;
+    $text-shadow-color: #fff;
+  }
+  background-color: $background-color;
+  color: $color;
+  text-shadow: $text-shadow-color 0 0 .5em;
+}
+
+.jcu-overlay--inverse {
+  color: $body-color;
+  text-shadow: #fff 0 0 .5em;
+}
+
+.jcu-bg--transparent {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.jcu-bg--cover {
+  background-size: cover;
+  background-position: center;
+}
+
+@each $name, $color in $jcu-bg-colors {
+  @each $opacity in $jcu-bg-opacities {
+    $class-name: ".jcu-bg--#{$name}-#{$opacity}pc";
+    @if $opacity == 100 {
+      $class-name: ".jcu-bg--#{$name}";
+    }
+
+    #{$class-name} {
+      // #fff needs to be colour-specific
+      @include jcu-bg-variant(rgba($color, ($opacity / 100)));
+    }
+  }
+}
+
+@each $name, $gradient in $jcu-bg-gradients {
+  .jcu-bg--#{$name} {
+    @include gradient-horizontal(rgba(nth($gradient, 1), .95), rgba(nth($gradient, 2), .95));
+  }
+
+  .jcu-bg--#{$name}-45deg {
+    @include gradient-directional(rgba(nth($gradient, 2), .95), rgba(nth($gradient, 1), .95), 45deg);
+  }
+
+  .jcu-bg--#{$name}-rev {
+    @include gradient-horizontal(rgba(nth($gradient, 2), .95), rgba(nth($gradient, 1), .95));
+  }
+
+}
+
+@each $name, $filename in $jcu-bg-images {
+  .jcu-bg--#{$name} {
+    background-image: url("../images/backgrounds/#{$filename}");
+  }
+}

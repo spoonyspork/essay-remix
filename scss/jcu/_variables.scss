@@ -1,0 +1,278 @@
+// Variables
+
+
+// Table of Contents
+//
+// Colors
+// Options
+// Spacing
+// Body
+// Grid containers
+// Grid columns
+// Typography
+// Bootstrap Component Customisations
+// JCU Custom Components
+
+// General variable structure
+//
+// Variable format should follow the `$component-modifier-state-property` order.
+// Custom JCU variables should be prefixed with `$jcu-*`.
+
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$gray-dark:                      #2d2d2d !default; //Approx 80% black
+$gray:                           #565656 !default;
+$gray-light:                     #797979 !default;
+$gray-lighter:                   #e7e7e7 !default;
+$gray-lightest:                  #f7f7f9 !default;
+
+$brand-primary:                  #06c !default;    // From top-level search and buttons
+$brand-success:                  #429306 !default; // Courses page
+
+$jcu-brand-primary-inverse:      #fff !default;
+$jcu-gradient-blue:              rgb(46,49,146), rgb(0,190,228) !default;
+$jcu-gradient-orange:            rgb(233,79,53), rgb(255,221,0) !default;
+$jcu-gradient-green:             rgb(0,166,81), rgb(214,224,64) !default;
+$jcu-gradient-red:               rgb(157,22,25), rgb(236,0,140) !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+//$enable-flex:                  true !default; // See http://v4-alpha.getbootstrap.com/getting-started/flexbox/
+$enable-rounded:                 false !default; // Sharp pointy edges
+$enable-shadows:                 false !default; // TODO Consider re-enabling for theme
+//$enable-gradients:             true !default; // Has no effect at present in Bootstrap
+$enable-transitions:             true !default; // Fancy transitions for elements
+
+
+// Spacing
+$border-width:                   1px !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg:                        $gray-lighter !default;
+$body-color:                     $gray-dark !default; // Squiz uses browser default
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+$jcu-container-fluid-max-width:  1050px !default;
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: $jcu-container-fluid-max-width
+) !default;
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-gutter-width:              1.25rem !default;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+// Most were not defined in original Squiz theme; approximately equal to
+// defaults from Firefox
+
+$font-family-sans-serif:         'Open Sans', sans-serif !default;
+
+$font-size-root:                 16px !default;
+$font-size-h1:                   1.9rem !default;
+$font-size-h2:                   1.7rem !default;
+$font-size-h3:                   1.5rem !default;
+$font-size-h4:                   1.25rem !default;
+$font-size-h5:                   1rem !default;
+$font-size-h6:                   .9rem !default;
+
+$display1-weight:                400 !default;
+$display2-weight:                400 !default;
+$display3-weight:                400 !default;
+$display4-weight:                400 !default;
+
+$headings-margin-bottom:         1rem !default;
+$headings-font-weight:           600 !default; // OpenSans has no 500 semi-bold
+
+$lead-font-weight:               400 !default;
+
+
+// Dropdowns: menu container and contents.
+// Reference: .toolbarmenu
+$dropdown-bg:                    #3f3f3f !default;
+$dropdown-border-color:          transparent !default;
+$dropdown-border-width:          0 !default;
+$dropdown-divider-bg:            #707070 !default;
+$dropdown-link-color:            #fff !default;
+$dropdown-link-hover-color:      darken($dropdown-link-color, 5%) !default;
+$dropdown-link-hover-bg:         lighten($dropdown-bg, 20%) !default;
+$dropdown-header-color:          #ababab !default;
+$jcu-dropdown-text-color:        #fff !default;
+
+// Z-index master list
+//
+// Warning: avoid customising these values. They extend upon Bootstrap's
+// defaults and are designed to all work together.
+$jcu-zindex-base:                990 !default;
+$jcu-zindex-exposition:          -1000 !default;
+$jcu-zindex-page-title:          1010 !default;
+$jcu-zindex-explorer:            1020 !default;
+
+// Navbar
+$navbar-dark-color:              rgba(255,255,255,.8) !default;
+$navbar-dark-hover-color:        rgba(255,255,255,.6) !default;
+$navbar-dark-active-color:       rgba(255,255,255,1) !default;
+$navbar-inverse-color:           $gray-dark !default;
+$navbar-inverse-toggle-hover-bg: $gray !default;
+$navbar-inverse-link-active-bg:  $gray !default;
+$jcu-navbar-nav-link-padding:    .5rem !default;
+
+// Navs
+// Reference: .tabs
+$nav-tabs-active-link-hover-color:        #fff !default;
+$nav-tabs-active-link-hover-bg:           $brand-primary !default;
+$nav-tabs-active-link-hover-border-color: $brand-primary !default;
+
+// Cards
+// Reference: .uber-accordion
+$card-cap-bg:                    $gray-dark !default;
+$jcu-card-cap-color:             #fff !default;
+$jcu-card-overlay-font-color:    #fff !default;
+$jcu-card-overlay-min-height:    6rem !default;
+
+// Modals
+$jcu-modal-header-color:         #fff !default;
+$jcu-modal-header-bg:            $gray-dark !default;
+
+// Breadcrumbs
+// Reference: .insidebreadcrumbs
+$breadcrumb-bg:                  $gray-lighter !default;
+$breadcrumb-padding-y:           .5rem !default;
+$breadcrumb-active-color:        $gray !default;
+
+
+// Custom JCU components
+
+// Transitions
+$jcu-fade-transition-speed:      .3s !default;
+
+// Themes
+$jcu-typography-themes:          ('blue':   (#00adef, #0d5589, #264ca3),
+                                  'orange': (#f79212, #a64819, #f04338),
+                                  'green':  (#98d321, #408224, #23aa4a),
+                                  'red':    (#ed1a4e, #dd0000, #8e191e)) !default;
+
+// Iconography
+$jcu-icon-font-family:           'webhostinghub-glyphs' !default;
+$jcu-icon-font-size:             1.5rem !default;
+$jcu-icon-font-size-lg:          2rem !default;
+
+// Campus Stack
+$jcu-campus-stack-border-width:  1px !default;
+$jcu-campus-stack-spacing:       .25em !default;
+$jcu-campus-stack-default:       $gray-dark !default;
+$jcu-campus-stack-color:         #176fc1 !default; // Colour matches the JCU shield
+$jcu-campus-stack-inverse:       $jcu-brand-primary-inverse !default;
+
+// Toolbar
+$jcu-toolbar-font-size:          .85rem !default; //Replicate $font-size-sm
+$jcu-toolbar-line-height:        1.1 !default;
+$jcu-toolbar-line-height-sm:     2.2 !default;
+
+// Exposition
+$jcu-exposition-background:      #000 !default;
+$jcu-exposition-max-height:      50rem !default;
+
+// Header
+$jcu-header-height:              17rem !default;
+$jcu-header-height-sm:           14rem !default;
+
+// Explorer
+$jcu-explorer-color:             $jcu-brand-primary-inverse !default;
+$jcu-explorer-active-color:      $brand-primary !default;
+$jcu-explorer-content-color:     $body-color !default;
+
+// Content
+$jcu-content-bg-color:           #fff !default;
+$jcu-content-link-print-prefix:  'https://www.jcu.edu.au' !default;
+
+// Footer
+$jcu-footer-text-color:          $body-color !default;
+$jcu-footer-border-color:        $jcu-footer-text-color !default;
+$jcu-footer-border-width:        $border-width !default;
+$jcu-footer-border:              $jcu-footer-border-width dotted $jcu-footer-border-color !default;
+
+// Utilities
+$jcu-bg-opacities:               (25, 50, 75, 90, 100) !default;
+$jcu-bg-colors: (
+  'pink': rgb(236, 0, 140),
+  'red': rgb(227, 31, 38),
+  'red-dark': rgb(157, 22, 27),
+  'orange': rgb(247, 147, 30),
+  'yellow': rgb(253, 185, 19),
+  'green-light': rgb(214, 224, 64),
+  'green': rgb(13, 177, 75),
+  'blue-light': rgb(0, 190, 228),
+  'blue': rgb(0, 102, 179),
+  'blue-dark': rgb(46, 49, 146),
+  'black': rgb(0, 0, 0),
+  'gray': $gray,
+  'gray-light': $gray-light,
+  'gray-lighter': $gray-lighter,
+  'white': rgb(255, 255, 255)
+) !default;
+
+$jcu-bg-gradients: (
+  'gradient-blue':   $jcu-gradient-blue,
+  'gradient-orange': $jcu-gradient-orange,
+  'gradient-green':  $jcu-gradient-green,
+  'gradient-red':    $jcu-gradient-red,
+) !default;
+
+// Image paths are relative to the base SCSS file
+$jcu-bg-images: (
+  'blue-buildings': 'BlueBuildings.jpg',
+  'blue-fish': 'BlueFish.jpg',
+  'blue-globe': 'BlueGlobe.jpg',
+  'blue-molecules': 'BlueMolecules.jpg',
+  'blue-purple-fibre-optic': 'BluePurpleFibreOptic.jpg',
+  'blue-skyscraper': 'BlueSkyscraper.jpg',
+  'fossil': 'BrownFossil.jpg',
+  'brown-green-yellow-grass': 'BrownGreenYellowGrass.jpg',
+  'brown-outback-road': 'BrownOutbackRoad.jpg',
+  'didgeridoo': 'Didgeridoo.jpg',
+  'eucalyptus-flower': 'EucalyptusFlower.jpg',
+  'green-fern': 'GreenFern.jpg',
+  'green-grass': 'GreenGrass.jpg',
+  'green-leaf-swirl': 'GreenLeafSwirl.jpg',
+  'green-rainforest': 'GreenRainforest.jpg',
+  'green-outback': 'GreenOutback.jpg',
+  'green-yellow-fibre-optic': 'GreenYellowFibreOptic.jpg',
+  'iot-circuit-board': 'IOTCircuitBoard.jpg',
+  'jigsaw': 'Jigsaw.jpg',
+  'law-books': 'LawBooks.jpg',
+  'multicolor-fibre-optic': 'MultiColourFibreOptic.jpg',
+  'multicolor-fabric': 'MulticolouredFabric.jpg',
+  'orange-flower': 'OrangeFlower.jpg',
+  'pink-sunset': 'PinkSunset.jpg',
+  'pink-waterdrops': 'PinkWaterdrops.jpg',
+  'rv-james-kirby': 'RVJamesKirby.jpg',
+  'red-blood-cells': 'RedBloodCells.jpg',
+  'red-fibre-optic': 'RedFibreOptic.jpg',
+  'red-flower': 'RedFlower.jpg',
+  'red-sand': 'RedSand.jpg',
+  'silver-gears': 'SilverGears.jpg',
+  'sunset-windmill': 'SunsetWindmill.jpg',
+  'tropics-map': 'TropicsMap.jpg',
+  'turtle-and-reef': 'TurtleandReef.jpg',
+  'vet-horses': 'VetHorses.jpg',
+  'yellow-savannah': 'YellowSavannah.jpg',
+  'yellow-shell': 'YellowShell.jpg',
+  'yellow-sunflower': 'YellowSunflower.jpg',
+) !default;

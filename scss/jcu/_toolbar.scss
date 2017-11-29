@@ -1,0 +1,144 @@
+//
+// Toolbar: global actions/links, fixed to the top of a site or application
+//
+
+// Special offset for pages with the toolbar
+.body--has-toolbar {
+  padding-top: $jcu-toolbar-height;
+
+  @media print {
+    padding-top: 0;
+  }
+}
+
+.jcu-toolbar {
+  padding: 0;
+  font-size: $jcu-toolbar-font-size;
+  line-height: $jcu-toolbar-line-height;
+
+  .form-inline {
+    padding-right: ($grid-gutter-width / 2);
+    padding-left: ($grid-gutter-width / 2);
+
+    .form-control,
+    .btn {
+      margin-top: .2rem;
+      margin-bottom: .2rem;
+      font-size: .6rem;
+      // TODO Reduce padding here
+      line-height: 1.2;
+    }
+
+    .custom-select {
+      color: $navbar-dark-color;
+      background: none;
+      border: 0 none;
+
+      option {
+        background-color: #fff;
+        color: $gray-dark;
+      }
+
+      + .icon-chevrondown {
+        margin-left: -2rem;
+        pointer-events: none;
+
+        &::before {
+          vertical-align: sub;
+        }
+      }
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: -2px; // Avoid rounding issues with dropdown menus
+    padding: $spacer;
+    color: $jcu-dropdown-text-color;
+
+    .nav {
+      margin-bottom: $spacer-y;
+    }
+
+    .nav a {
+      font-size: $font-size-sm;
+      color: $jcu-dropdown-text-color;
+
+      @include hover-focus {
+        color: $dropdown-link-hover-color;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .dropdown {
+      @include hover {
+        background-color: $dropdown-bg;
+        transition-duration: $jcu-fade-transition-speed;
+        transition-property: background-color, color;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    line-height: $jcu-toolbar-line-height-sm;
+
+    .dropdown-menu,
+    .dropdown-toggle::after {
+      display: none !important;
+    }
+    .nav-item {
+      width: 16.66%;
+      text-align: center;
+    }
+    .navbar-nav .nav-item + .nav-item {
+      margin-left: 0;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    .nav-link {
+      padding-right: ($spacer / 4);
+      padding-left: ($spacer / 4);
+    }
+  }
+
+  .jcu-toolbar__heading {
+    padding-bottom: ($spacer-y / 2);
+    margin-bottom: ($spacer-y / 2);
+    font-size: 1rem;
+    border-bottom: $border-width solid $dropdown-header-color;
+
+    a {
+      color: $dropdown-header-color;
+    }
+  }
+
+  .card {
+    padding-top: ($spacer * .75);
+    padding-bottom: ($spacer * .75);
+    color: $jcu-dropdown-text-color;
+    background-color: $gray-light;
+    border: 0 none;
+    @include clearfix;
+
+    &:hover .card-title {
+      text-decoration: underline;
+    }
+  }
+
+  .card-title {
+    font-size: $font-size-base;
+    color: $jcu-dropdown-text-color;
+  }
+
+  .card-icon {
+    font-size: $jcu-icon-font-size;
+    color: $gray-dark; //navbar-inverse-bg
+  }
+
+  .card-subtitle {
+    font-size: $font-size-xs;
+    color: $gray-lighter;
+  }
+
+}

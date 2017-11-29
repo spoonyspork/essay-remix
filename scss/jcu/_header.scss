@@ -1,0 +1,90 @@
+//
+// Header: upper portion of page layouts (branding, navigation, title)
+//
+
+// Shorter height as the Explorer has fixed positioning
+$jcu-header-height-explorer-sm: ($jcu-header-height-sm - $jcu-explorer-height-sm);
+
+.jcu-brand {
+  @extend .navbar-brand;
+}
+
+.jcu-header {
+  background-color: $gray-dark;
+  background-position: center center;
+  background-size: cover;
+
+  @media print {
+    height: auto !important;
+    background-color: transparent;
+    background-image: none !important;
+  }
+}
+
+// Banner-style contents are vertically centred & expand on larger displays
+.jcu-header--banner {
+  @include media-breakpoint-up(md) {
+    padding-bottom: ($spacer-y * 3);
+    padding-top: ($spacer-y * 3);
+  }
+
+  .row {
+    @include flex-items(center);
+  }
+}
+
+// Marketing-style headers are larger; commonly used on CMS-style pages
+.jcu-header--marketing {
+  height: $jcu-header-height;
+  padding-top: $spacer;
+
+  .jcu-header__page-title {
+    position: absolute;
+    top: ($jcu-header-height * .65);
+    z-index: $jcu-zindex-base;
+    padding: .3em;
+    margin-left: $spacer-x * 2;
+    background-color: rgba(0, 0, 0, .2);
+
+    @media print {
+      position: relative;
+      top: auto;
+      background-color: transparent;
+      margin-left: 0;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .body--has-explorer .jcu-header--marketing {
+    height: $jcu-header-height-explorer-sm;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Page title has responsive font sizing
+.jcu-header__page-title {
+  margin-top: $spacer-y;
+  margin-bottom: $spacer-y;
+  color: #fff;
+  font-size: $font-size-h3;
+  font-weight: 600;
+  text-shadow: 0 0 .5em $gray-dark;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-h1;
+  }
+
+  @media print {
+    background-color: #fff;
+    color: $gray-dark;
+    font-size: $font-size-h1;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+

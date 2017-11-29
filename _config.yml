@@ -1,0 +1,51 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+kramdown:
+  auto_ids: true
+
+# Permalinks
+permalink:        pretty
+
+# Server
+source:           docs
+destination:      _gh_pages
+host:             0.0.0.0
+port:             9001
+baseurl:          ""
+url:              https://web.jcu.io
+encoding:         UTF-8
+timezone:         Australia/Brisbane
+exclude:          [assets/scss/]
+
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+# Custom vars
+current_version:  1.0.0-beta.1
+bootstrap_version: 4.0.0-alpha.2
+repo:             https://github.com/jcu/web-framework
+slack:            https://bootstrap-slack.herokuapp.com
+
+download:
+  source:         https://github.com/jcu/web-framework/archive/v1.0.0-beta.1.zip
+  dist:           https://github.com/jcu/web-framework/releases/download/v1.0.0-beta.1/jcu-web-framework-1.0.0-beta.1-dist.zip
+  releases:       https://github.com/jcu/web-framework/releases
+
+blog:             http://blog.getbootstrap.com
+expo:             http://expo.getbootstrap.com
+themes:           http://themes.getbootstrap.com
+
+cdn:
+  base:            https://cdn.web.jcu.io/1.0.0-beta.1
+  # See https://www.srihash.org for info on how to generate the hashes
+  css:            https://cdn.web.jcu.io/1.0.0-beta.1/css/jcu.min.css
+  css_hash:       "sha384-yvalFRKl+0g0tWrYJQwXPaf4oRFo9hOu7BssvfScVX9wdvvA+NjYtnAFm3sqP7LF"
+  js:             https://cdn.web.jcu.io/1.0.0-beta.1/js/jcu.min.js
+  js_hash:        "sha384-GXpe6UW5FXR+By2fTo2YeI+yVoY1QGkZdZpppWl3qboYFMqHL7zFEq+X6hRoB1gH"
+  jquery:         https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
+  jquery_hash:    "sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx"
+  tether:         https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js
+  tether_hash:    "sha384-MWq1Lnqj72tmjGdOKuNBn3E0gj3vWfy/1EmR5TVL8d8nGvwgy32YkCpKpTUhwBVv"

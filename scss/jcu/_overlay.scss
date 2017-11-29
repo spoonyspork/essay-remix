@@ -1,0 +1,13 @@
+//
+// Overlay: palette of semi-transparent colours used on Cards, etc
+//
+.jcu-overlay {
+  padding: .5rem .75rem;
+  border-top-right-radius: 1.25rem;
+}
+
+.jcu-overlay--plain {
+  padding: .25rem;
+  border-top-right-radius: 0;
+}
+

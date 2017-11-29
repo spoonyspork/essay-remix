@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include header.html %}
+  </head>
+  <body class="bd-docs" data-spy="scroll" data-target=".bd-sidenav-active">
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    {% include nav-home.html %}
+
+    <div class="bd-pageheader">
+      <div class="container">
+        {% include page-headers.html %}
+      </div>
+    </div>
+
+    <main class="container">
+      <div class="row jcu-content">
+        <div class="container-fluid">
+          <div class="col-md-3 col-md-push-9 bd-sidebar">
+            {% include nav-docs.html %}
+          </div>
+          <div class="col-md-9 col-md-pull-3 bd-content">
+            <h1 class="bd-title" id="content">{{ page.title }}</h1>
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>

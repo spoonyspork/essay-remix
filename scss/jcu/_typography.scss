@@ -1,0 +1,65 @@
+//
+// Typography: customised text-centric components
+//
+.lead {
+  margin-bottom: ($spacer-y * 2);
+  line-height: 1.3;
+}
+
+// Workaround for Firefox double-underline
+// See https://github.com/necolas/normalize.css/pull/451
+abbr[title] {
+  text-decoration: none;
+}
+
+// Links default to primary colour so ensure distinct styling
+.text-primary a {
+  border-bottom: $border-width dotted $body-color;
+  @include hover-focus {
+    text-decoration: none;
+    border-bottom-color: $link-hover-color;
+  }
+}
+
+// Bootstrap-flavoured typography extensions
+.text-wrap {
+  white-space: normal !important
+}
+
+.text-inverse {
+  color: $gray-lightest;
+
+  @include hover-focus {
+    color: $gray-lightest;
+  }
+}
+
+.block--dotted {
+  padding-top: $spacer-y;
+  padding-bottom: $spacer-y;
+  margin-bottom: $spacer-y;
+  border-top: $border-width dotted $gray-light;
+  border-bottom: $border-width dotted $gray-light;
+}
+
+@mixin list-bordered($padding-y) {
+  @extend .list-unstyled;
+  > li {
+    padding-top: $padding-y;
+    padding-bottom: $padding-y;
+    border-bottom: $border-width solid $gray-light;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0 none;
+    }
+  }
+}
+
+.list-bordered {
+  @include list-bordered(.25em);
+}

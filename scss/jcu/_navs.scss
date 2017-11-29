@@ -1,0 +1,56 @@
+//
+// Navs
+//
+.nav-tabs {
+  .nav-link {
+    border-top-right-radius: 1em;
+  }
+
+  &.bg-inverse {
+    padding: ($spacer-y / 2) ($spacer-x / 2) 0;
+    border-bottom: 0 none;
+
+    .nav-item {
+      margin-bottom: 0;
+    }
+    .nav-link {
+      @include plain-hover-focus {
+        border-bottom: 0 none;
+      }
+
+      &.disabled {
+        @include plain-hover-focus {
+          color: #999;
+        }
+      }
+    }
+  }
+}
+
+// Re-use colours from dark navbars for dark nav
+.nav-dark {
+  .nav-link {
+    color: $navbar-dark-color;
+
+    @include hover-focus {
+      color: $navbar-dark-hover-color;
+    }
+
+    &.disabled {
+      @include plain-hover-focus {
+        color: #999;
+      }
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.open .nav-link {
+    @include plain-hover-focus {
+      color: $navbar-dark-active-color;
+    }
+  }
+}
+
+.tab-pane {
+  padding: ($spacer / 2);
+}

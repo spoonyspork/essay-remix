@@ -1,0 +1,53 @@
+//
+// Layout: general modifiers to page layout and structure
+//
+@media print {
+  body {
+    background-color: transparent;
+  }
+
+  // Workaround for full width container when printed
+  .col-pr-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+    width: 100%;
+  }
+}
+
+// Fluid-width container, but only until max-width
+.container-fluid--max-width {
+  max-width: $jcu-container-fluid-max-width;
+}
+
+// Ensure dropdown fluid container is shown with max-width applied
+.yamm > .container-fluid--max-width {
+  position: relative;
+}
+
+// Flexbox: simple alignment for block items in containers
+@mixin flex-items($align) {
+  display: flex;
+  align-items: $align;
+}
+
+.flex-items-start {
+  @include flex-items(flex-start);
+}
+
+.flex-items-center {
+  @include flex-items(center);
+}
+
+.flex-items-end {
+  @include flex-items(flex-end);
+}
+
+.visible-print-flex {
+  display: none !important;
+
+  @media print {
+    display: flex !important;
+  }
+}

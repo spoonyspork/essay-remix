@@ -1,0 +1,57 @@
+//
+// Accordion: a set of headings that reveal content upon interaction
+//
+.jcu-accordion {
+  .card-block {
+    background-color: $gray-lighter;
+  }
+
+  .card-header {
+    padding: 0;
+  }
+
+  .jcu-accordion__toggle {
+    display: block;
+    width: 100%;
+    padding: $card-spacer-y $card-spacer-x;
+    color: $jcu-brand-primary-inverse;
+    background-color: $brand-primary;
+    transition: background-color $jcu-fade-transition-speed;
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+
+    &.collapsed {
+      background-color: #000;
+    }
+
+    &::before {
+      position: absolute;
+      // Position to the right of (chevron + chevron width + padding)
+      right: ($font-size-base * (1 + .75 + 1));
+      font-size: $font-size-xs;
+      // Calculate line-height for smaller font to be even with headings
+      line-height: $line-height + .5;
+      content: "Hide";
+    }
+
+    &.collapsed::before {
+      content: "Show";
+    }
+
+    &::after {
+      position: absolute;
+      right: $font-size-base;
+      font-family: "WebHostingHub-Glyphs";
+      // Calculate line-height for icon font to be even with ::before text
+      line-height: $line-height + .25;
+      content: "\e39c";
+    }
+
+    &.collapsed::after {
+      content: "\e39d";
+    }
+  }
+}
+

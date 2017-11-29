@@ -1,0 +1,51 @@
+//
+// Footer: jump lists, navigation, and end-of-page matter
+//
+.jcu-footer {
+  font-size: $font-size-sm;
+  background-color: $gray-lighter;
+}
+
+.jcu-footer__heading {
+  padding-top: ($spacer / 2);
+  padding-bottom: ($spacer / 2);
+  font-size: 1rem;
+  font-weight: 400;
+  border-bottom: $jcu-footer-border;
+}
+
+.jcu-footer__social-legal {
+  padding-top: ($spacer-y / 2);
+  padding-bottom: ($spacer-y / 2);
+  border-top: $jcu-footer-border;
+  border-bottom: $jcu-footer-border;
+
+  a {
+    font-weight: $headings-font-weight;
+  }
+
+}
+
+.jcu-footer__social {
+  font-size: $jcu-icon-font-size-lg;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    font-size: $jcu-icon-font-size;
+    text-align: left;
+  }
+
+  a {
+    color: $gray;
+
+    @include hover-focus {
+      color: $link-hover-color;
+    }
+  }
+}
+
+.jcu-footer__legal .list-inline-item:not(:last-child)::after {
+  margin-left: ($spacer-x / 2);
+  content: "";
+  border-left: $jcu-footer-border-width solid $gray-light;
+}

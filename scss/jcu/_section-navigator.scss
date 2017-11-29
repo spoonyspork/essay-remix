@@ -1,0 +1,105 @@
+//
+// Section Navigator: sub-section links, menus and breadcrumbs
+//
+.jcu-section-navigator {
+  // Calculate complete navbar height for use in positioning
+  $jcu-section-navigator-height: (($font-size-xs * $line-height) + 2 * $jcu-navbar-nav-link-padding);
+  // Rounding may make navbar 1/16th rem higher
+  margin-top: (-$jcu-section-navigator-height - .0625rem);
+  font-size: $font-size-xs;
+
+  @media print {
+    margin-top: 0;
+    display: block;
+  }
+
+  .dropdown-menu {
+    padding: $spacer;
+    font-size: inherit;
+
+    .dropdown-item {
+      padding: ($spacer / 4);
+      border-bottom: $dropdown-border-width solid $gray-light;
+
+      &:last-child {
+        border-bottom: 0 none;
+      }
+    }
+  }
+
+  .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // Move the subnavigation items further to the right
+  .navbar-nav .nav-item:nth-child(2) {
+    margin-left: 1.5rem;
+  }
+
+  .navbar-nav .active {
+    $navbar-half-padding: ($navbar-padding-x / 2);
+    position: relative; // for arrow
+    margin-left: -$navbar-padding-x;
+    background-color: $gray;
+
+    .nav-link {
+      // Line up with padding for breadcrumbs
+      padding-left: $breadcrumb-padding-x;
+      font-weight: 600;
+      @include hover-focus {
+        color: inherit;
+        text-decoration: underline;
+        background-color: inherit;
+        border-top-right-radius: 0;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      content: " ";
+      border: solid transparent;
+      border-color: rgba($gray, 0);
+      // Height of border is half element height the 2 borders combine
+      $border-width: ($jcu-section-navigator-height / 2);
+      border-width: $border-width;
+      border-left-color: $gray;
+    }
+  }
+
+  .navbar-nav .nav-link {
+    // Replace padding-top with half margin/padding combo for 'tab' look
+    padding-top: ($jcu-navbar-nav-link-padding / 2);
+    margin-top: ($jcu-navbar-nav-link-padding / 2);
+    // Wider links
+    padding-left: ($jcu-navbar-nav-link-padding * 1.5);
+    padding-right: ($jcu-navbar-nav-link-padding * 1.5);
+  }
+
+  // Greater specificity to override navbar-dark
+  .navbar-dark {
+    .open > .nav-link:focus,
+    .nav-link:hover,
+    .nav-link:focus,
+    .dropdown:hover .nav-link {
+      color: $body-color;
+      background-color: #fff;
+      border-top-right-radius: .5rem;
+    }
+  }
+}
+
+.jcu-section-navigator__breadcrumb {
+  background-color: #fff;
+  text-transform: uppercase;
+
+  @media print {
+    display: block;
+  }
+}
+
